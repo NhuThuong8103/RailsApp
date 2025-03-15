@@ -1,0 +1,86 @@
+<table>
+  <tr>
+    <td>
+      Name
+    </td>
+    <td>
+      Full Name
+    </td>
+    <td>
+      Phone
+    </td>
+    <td>
+      Gender
+    </td>
+    <td>
+      Address
+    </td>
+    <td>
+      Email
+    </td>
+    <td>
+      Password
+    </td>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= user.full_name %>
+      </td>
+      <td>
+        <%= user.phone %>
+      </td>
+      <td>
+        <%= user.sex %>
+      </td>
+      <td>
+        <%= user.address %>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.password %>
+      </td>
+      <td>
+        <button>
+          Edit
+        </button>
+      </td>
+      <td>
+        <button>
+          Delete
+        </button>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<br>
+<br>
+
+<div style="text-align: center;">
+  <h2>Add user use Active Ceble!</h2>
+
+  <%= form_with model: @user do |form| %>
+    <label>Name</label><%= form.text_field :name %>
+    <br>
+    <label>Full Name</label><%= form.text_field :full_name %>
+    <br>
+    <label>Phone</label><%= form.text_field :phone %>
+    <br>
+    <label>Gender</label><%= form.text_field :sex %>
+    <br>
+    <label>Address</label><%= form.text_field :address %>
+    <br>
+    <label>Email</label><%= form.text_field :email %>
+    <br>
+    <label>Password</label><%= form.text_field :password %>
+    <br>
+    <%= form.submit %>
+  <% end %>
+</div>
